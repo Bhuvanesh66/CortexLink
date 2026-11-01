@@ -105,8 +105,8 @@ export async function getTinyFishApiKey(): Promise<string | undefined> {
 export function tinyFishHeaders(apiKey: string): Record<string, string> {
   return {
     "X-API-Key": apiKey,
-    "X-TF-ORIGIN": "BigSet",
-    "X-TF-Request-Origin": "BigSet",
+    "X-TF-ORIGIN": "Cortex",
+    "X-TF-Request-Origin": "Cortex",
   };
 }
 
@@ -225,7 +225,7 @@ export async function clearLegacyPlaintextLocalCredentials(): Promise<void> {
 
 export async function verifyTinyFishApiKey(apiKey: string): Promise<void> {
   const url = new URL("https://api.search.tinyfish.ai");
-  url.searchParams.set("query", "BigSet");
+  url.searchParams.set("query", "Cortex");
 
   await withFetchTimeout(
     async (signal) => {

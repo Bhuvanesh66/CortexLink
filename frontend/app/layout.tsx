@@ -24,14 +24,14 @@ export const metadata: Metadata = {
 
 /**
  * Inline script: resolve theme BEFORE React hydrates so we never paint
- * the wrong palette and then flip. Reads `bigset:theme` from localStorage,
+ * the wrong palette and then flip. Reads `cortex:theme` from localStorage,
  * falls back to the OS preference. Sets `<html data-theme>` synchronously.
  *
  * Kept as a string and injected via `dangerouslySetInnerHTML` because Next
  * inlines it as-is into `<head>` — Script components defer execution and
  * would re-introduce the flicker.
  */
-const themeInitScript = `(function(){try{var s=localStorage.getItem('bigset:theme');var t=s==='dark'||s==='light'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
+const themeInitScript = `(function(){try{var s=localStorage.getItem('cortex:theme');var t=s==='dark'||s==='light'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 
 export default function RootLayout({
   children,

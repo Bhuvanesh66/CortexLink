@@ -1,5 +1,5 @@
-export const OPENROUTER_VERIFIER_KEY = "bigset:openrouter-code-verifier";
-export const OPENROUTER_RETURN_TO_KEY = "bigset:openrouter-return-to";
+export const OPENROUTER_VERIFIER_KEY = "cortex:openrouter-code-verifier";
+export const OPENROUTER_RETURN_TO_KEY = "cortex:openrouter-return-to";
 
 function base64Url(bytes: ArrayBuffer): string {
   let binary = "";

@@ -1,6 +1,6 @@
 import type { AuthConfig } from "convex/server";
 
-const isLocalMode = process.env.BIGSET_LOCAL_MODE === "1";
+const isLocalMode = process.env.CORTEX_LOCAL_MODE === "1";
 const clerkIssuer = process.env.CLERK_JWT_ISSUER_DOMAIN;
 
 if (!isLocalMode && !clerkIssuer) {

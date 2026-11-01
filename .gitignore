@@ -3,7 +3,7 @@ node_modules/
 .npm-cache/
 .env
 .env.local
-Project_BigSet_brief.md
+Project_Cortex_brief.md
 
 # Editor / IDE
 .idea/
@@ -29,4 +29,5 @@ temp/
 *.tgz
 
 # Internal docs
-BigSet Technical Specs & Goals.md
+Cortex Technical Specs & Goals.md
+.local-dev.log

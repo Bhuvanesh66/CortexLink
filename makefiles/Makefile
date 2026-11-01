@@ -3,7 +3,7 @@ SHELL := /usr/bin/env bash
 CONVEX_CLI_URL := http://convex:3210
 CONVEX_CLI_RUN := docker compose -f docker-compose.dev.yml run --rm --build --no-deps
 
-.PHONY: all dev validate-dev-env start-local-keychain stop-local-keychain down clean convex-push convex-env seed-public-datasets ensure-admin-key install-deps build-release
+.PHONY: all dev validate-dev-env start-local-keychain stop-local-keychain down clean convex-push convex-env seed-public-datasets ensure-admin-key install-deps
 
 all: dev
 
@@ -11,8 +11,6 @@ install-deps:
 	@cd frontend && npm install --silent
 	@cd backend && npm install --silent
 
-build-release: install-deps
-	node scripts/build-release.mjs
 
 dev: validate-dev-env install-deps start-local-keychain
 	docker compose -f docker-compose.dev.yml up --build -d db convex convex-dashboard
@@ -28,7 +26,7 @@ dev: validate-dev-env install-deps start-local-keychain
 	$(MAKE) convex-push
 	docker compose -f docker-compose.dev.yml up --build -d
 	@echo ""
-	@echo "BigSet is ready!"
+	@echo "Cortex is ready!"
 	@echo "  App:              http://localhost:3500"
 	@echo "  Mastra Studio:    http://localhost:4111"
 	@echo "  Convex Dashboard: http://localhost:6791"
@@ -57,7 +55,7 @@ validate-dev-env:
 		token="$$(node -e 'const { randomBytes } = require("node:crypto"); process.stdout.write(randomBytes(32).toString("hex"));')"; \
 		ensure_env_var LOCAL_KEYCHAIN_PORT 3502; \
 		ensure_env_var LOCAL_KEYCHAIN_TIMEOUT_MS 5000; \
-		ensure_env_var BIGSET_LOCAL_WORKSPACE_ID "$$workspace_id"; \
+		ensure_env_var CORTEX_LOCAL_WORKSPACE_ID "$$workspace_id"; \
 		ensure_env_var LOCAL_KEYCHAIN_TOKEN "$$token"; \
 	fi
 	@prod="$$(grep '^PROD=' .env | cut -d= -f2-)"; \
@@ -88,7 +86,7 @@ validate-dev-env:
 				TINYFISH_API_KEY) \
 					echo "  ✗ $$key"; \
 					echo "    → Create account → API Keys → Create Key"; \
-					echo "    https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=bigset-developer-2026q2"; \
+					echo "    https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=cortex-developer-2026q2"; \
 					echo "";; \
 				OPENROUTER_API_KEY) \
 					echo "  ✗ $$key"; \
@@ -198,7 +196,7 @@ convex-env:
 	fi; \
 	if [[ "$$prod" != "1" ]]; then \
 		$(CONVEX_CLI_RUN) -e CONVEX_SELF_HOSTED_ADMIN_KEY="$$admin_key" frontend sh -lc \
-		'npx convex env set BIGSET_LOCAL_MODE 1 --url $(CONVEX_CLI_URL) --admin-key "$$CONVEX_SELF_HOSTED_ADMIN_KEY"'; \
+		'npx convex env set CORTEX_LOCAL_MODE 1 --url $(CONVEX_CLI_URL) --admin-key "$$CONVEX_SELF_HOSTED_ADMIN_KEY"'; \
 		exit 0; \
 	fi; \
 	issuer="$$(grep '^CLERK_JWT_ISSUER_DOMAIN=' .env | cut -d= -f2-)"; \
@@ -207,7 +205,7 @@ convex-env:
 		exit 1; \
 	fi; \
 	$(CONVEX_CLI_RUN) -e CONVEX_SELF_HOSTED_ADMIN_KEY="$$admin_key" frontend sh -lc \
-	'npx convex env set BIGSET_LOCAL_MODE 0 --url $(CONVEX_CLI_URL) --admin-key "$$CONVEX_SELF_HOSTED_ADMIN_KEY"'; \
+	'npx convex env set CORTEX_LOCAL_MODE 0 --url $(CONVEX_CLI_URL) --admin-key "$$CONVEX_SELF_HOSTED_ADMIN_KEY"'; \
 	$(CONVEX_CLI_RUN) -e CONVEX_SELF_HOSTED_ADMIN_KEY="$$admin_key" -e CLERK_JWT_ISSUER_DOMAIN="$$issuer" frontend sh -lc \
 	'npx convex env set CLERK_JWT_ISSUER_DOMAIN "$$CLERK_JWT_ISSUER_DOMAIN" --url $(CONVEX_CLI_URL) --admin-key "$$CONVEX_SELF_HOSTED_ADMIN_KEY"'
 

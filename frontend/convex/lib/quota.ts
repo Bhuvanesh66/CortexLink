@@ -90,7 +90,7 @@ function getNextMonthStartUTC(ts: number): number {
 }
 
 function isLocalMode(): boolean {
-  return process.env.BIGSET_LOCAL_MODE === "1";
+  return process.env.CORTEX_LOCAL_MODE === "1";
 }
 
 function snapshotOf(

@@ -112,7 +112,7 @@ async function keychainRequest<T>(
 export function expectedKeychainAccount(
   service: LocalCredentialService,
 ): string {
-  return localKeychainAccount(env.BIGSET_LOCAL_WORKSPACE_ID, service);
+  return localKeychainAccount(env.CORTEX_LOCAL_WORKSPACE_ID, service);
 }
 
 export async function getKeychainCredential(

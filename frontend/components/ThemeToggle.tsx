@@ -5,8 +5,8 @@ import { EVENTS, track } from "@/lib/analytics";
 
 type Theme = "light" | "dark";
 
-const STORAGE_KEY = "bigset:theme";
-const THEME_CHANGED_EVENT = "bigset:theme-changed";
+const STORAGE_KEY = "cortex:theme";
+const THEME_CHANGED_EVENT = "cortex:theme-changed";
 
 /**
  * The same selection logic that runs in the inline `<head>` script

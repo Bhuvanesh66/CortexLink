@@ -165,7 +165,7 @@ export default function Home() {
         <a href="https://tinyfish.ai" className="text-link" target="_blank" rel="noreferrer">
           TinyFish
         </a>{" "}
-        · Built on the open-source BigSet engine (AGPL-3.0)
+        · Open source under AGPL-3.0
       </footer>
     </div>
   );

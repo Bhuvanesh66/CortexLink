@@ -1,6 +1,6 @@
-# BigSet Frontend
+# Cortex Frontend
 
-Next.js 16 app — the UI for BigSet.
+Next.js 16 app — the UI for Cortex.
 
 ## Running
 

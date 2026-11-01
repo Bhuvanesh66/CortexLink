@@ -22,7 +22,7 @@ const localAuth = {
   isLoaded: true,
   isSignedIn: true,
   userId: LOCAL_USER_ID,
-  getToken: async () => "bigset-local",
+  getToken: async () => "cortex-local",
 };
 
 const localUserState = {

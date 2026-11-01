@@ -17,7 +17,7 @@ function save(key: string, value: unknown) {
 }
 
 export function usePersistedColumnWidths(datasetId: string) {
-  const key = `bigset:${datasetId}:colWidths`;
+  const key = `cortex:${datasetId}:colWidths`;
   const [widths, setWidths] = useState<Record<string, number>>(() => load(key, {}));
 
   const updateWidths = useCallback(

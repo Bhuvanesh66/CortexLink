@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Verifies BigSet's authorization layer end-to-end against a running local
+# Verifies Cortex's authorization layer end-to-end against a running local
 # stack (frontend :3500, convex :3210). Exits 0 if everything passes,
 # 1 if any check fails. Designed to be safe to rerun.
 #
@@ -42,7 +42,7 @@ assert_error_contains() {
 }
 
 echo "════════════════════════════════════════════════════════════════"
-echo "  BigSet authorization verification"
+echo "  Cortex authorization verification"
 echo "  convex=$CONVEX  frontend=$FRONTEND"
 echo "════════════════════════════════════════════════════════════════"
 

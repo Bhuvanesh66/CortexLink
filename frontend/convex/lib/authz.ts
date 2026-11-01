@@ -37,14 +37,14 @@ const UNAUTHENTICATED = "Not authenticated";
 const LOCAL_USER_ID = "local_user_default";
 
 function isLocalMode(): boolean {
-  return process.env.BIGSET_LOCAL_MODE === "1";
+  return process.env.CORTEX_LOCAL_MODE === "1";
 }
 
 function localIdentity(): UserIdentity {
   return {
     subject: LOCAL_USER_ID,
-    issuer: "bigset-local",
-    tokenIdentifier: `bigset-local|${LOCAL_USER_ID}`,
+    issuer: "cortex-local",
+    tokenIdentifier: `cortex-local|${LOCAL_USER_ID}`,
   };
 }
 

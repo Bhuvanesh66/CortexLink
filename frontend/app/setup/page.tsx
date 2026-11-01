@@ -85,7 +85,7 @@ export default function SetupPage() {
                 status?.services.tinyfish.configured ? "Update key" : "Add API key"
               }
               onPrimary={() => setModal("tinyfish")}
-              helperHref="https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=bigset-developer-2026q2"
+              helperHref="https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=cortex-developer-2026q2"
               helperLabel="Need a TinyFish key?"
               helperDescription="Open the TinyFish API keys page"
             />
@@ -338,7 +338,7 @@ function ApiKeyModal({
             <a
               href={
                 isTinyFish
-                  ? "https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=bigset-developer-2026q2"
+                  ? "https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=cortex-developer-2026q2"
                   : "https://openrouter.ai/settings/keys"
               }
               target="_blank"

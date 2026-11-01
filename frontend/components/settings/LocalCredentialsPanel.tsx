@@ -27,7 +27,7 @@ const SERVICE_COPY = {
     inputPlaceholder: "tf_...",
     modalDescription: "Cortex verifies the key and stores it in your OS keychain.",
     helperHref:
-      "https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=bigset-developer-2026q2",
+      "https://agent.tinyfish.ai/api-keys?utm_source=github&utm_medium=organic&utm_campaign=cortex-developer-2026q2",
     helperLabel: "Need a TinyFish key?",
     helperDescription: "Open the TinyFish API keys page",
   },

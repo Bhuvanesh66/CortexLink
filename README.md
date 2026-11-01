@@ -86,8 +86,6 @@ Open http://localhost:3500, create a monitor, let the agents populate it, then o
 - Source links show where the evidence came from; they are not independent verification
 - Baselines are stored in the browser (per dataset), not on the server yet
 
-## Credits and license
+## License
 
-Cortex's data engine (dataset creation, TinyFish research workflows, Convex storage, auth) is built on the open-source **[BigSet](https://github.com/tinyfish-io/bigset-oss)** project by TinyFish. Our contribution is the decision layer on top: change signals, Decision Lab ranking and explanations, decision briefs, and the Cortex product and design. The original engine documentation is in [docs/BIGSET_ENGINE.md](docs/BIGSET_ENGINE.md).
-
-Licensed under **AGPL-3.0**, as required by the upstream project. See [LICENSE](LICENSE).
+AGPL-3.0, see [LICENSE](LICENSE). The dataset engine is adapted from the open-source [BigSet](https://github.com/tinyfish-io/bigset-oss) project.
