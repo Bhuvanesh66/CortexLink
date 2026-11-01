@@ -1,0 +1,61 @@
+{
+  "name": "cortex-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ../scripts/with-root-env.mjs next dev",
+    "build": "node ../scripts/with-root-env.mjs next build",
+    "start": "node ../scripts/with-root-env.mjs next start",
+    "lint": "node ../scripts/with-root-env.mjs eslint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.3.7",
+    "@tanstack/react-table": "^8.21.3",
+    "convex": "^1.39.1",
+    "lucide-react": "^1.17.0",
+    "next": "16.3.5",
+    "posthog-js": "^1.374.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-window": "^1.8.11",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-window": "^1.8.8",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "overrides": {
+    "@babel/core": "^7.29.6",
+    "@opentelemetry/core": "^2.11.0",
+    "@typescript-eslint/typescript-estree": {
+      "brace-expansion": "^5.0.9"
+    },
+    "baseline-browser-mapping": "^2.11.23",
+    "brace-expansion": "^1.1.18",
+    "browserslist": "^4.28.9",
+    "dompurify": "^3.4.15",
+    "fflate": "^0.4.9",
+    "js-cookie": "^3.0.8",
+    "js-yaml": "^4.3.2",
+    "nanoid": "^3.3.19",
+    "postcss": "^8.5.28",
+    "protobufjs": "^7.6.6",
+    "sharp": "^0.35.4",
+    "ws": "^8.21.3"
+  }
+}
