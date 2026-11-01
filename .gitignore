@@ -31,3 +31,4 @@ temp/
 # Internal docs
 Cortex Technical Specs & Goals.md
 .local-dev.log
+.local-npm-*.log
